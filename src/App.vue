@@ -1,21 +1,13 @@
 <template>
-  <ul>
-    <resource-item
-      v-for="res in resources"
-      :key="res.id"
-      :title="res.title"
-      :description="res.description"
-      :link="res.link"
-    />
-  </ul>
+  <stored-resources :resources="resources" />
 </template>
 
 <script>
-import ResourceItem from './components/resources/ResourceItem.vue';
+import StoredResources from './components/resources/StoredResources.vue';
 
 export default {
   components: {
-    ResourceItem,
+    StoredResources,
   },
   data() {
     return {
