@@ -3,7 +3,9 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <button>Delete</button>
+        <base-button mode="flat">
+          <em class="fas fa-trash-alt"></em>
+        </base-button>
       </header>
 
       <p>{{ description }}</p>
