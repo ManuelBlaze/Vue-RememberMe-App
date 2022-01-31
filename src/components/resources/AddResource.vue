@@ -1,4 +1,10 @@
 <template>
+  <base-modal v-if="isVisibleModal" :title="modalTitle" @close="handleModal">
+    <template #default>
+      <p>{{ modalMsg }}</p>
+    </template>
+  </base-modal>
+
   <base-card>
     <form>
       <div class="form-control">
@@ -28,12 +34,6 @@
       </div>
     </form>
   </base-card>
-
-  <base-modal v-if="isVisibleModal">
-    <h2>{{ modalTitle }}</h2>
-    <p>{{ modalMsg }}</p>
-    <base-button @click="handleModal">Okay</base-button>
-  </base-modal>
 </template>
 
 <script>
@@ -42,7 +42,7 @@
  * @constant
  * @type {Number}
  */
-const MIN_CHAR = 5;
+const MIN_CHAR = 3;
 
 export default {
   inject: ['addResource'],
@@ -132,7 +132,7 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #3a0061;
+  border-color: #439b74;
   background-color: #f7ebff;
 }
 
