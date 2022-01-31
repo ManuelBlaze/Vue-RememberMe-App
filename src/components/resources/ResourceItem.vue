@@ -3,7 +3,7 @@
     <base-card>
       <header>
         <h3>{{ title }}</h3>
-        <base-button mode="flat">
+        <base-button mode="flat" @click="removeResource(id)">
           <em class="fas fa-trash-alt"></em>
         </base-button>
       </header>
@@ -18,7 +18,8 @@
 
 <script>
 export default {
-  props: ['title', 'description', 'link'],
+  props: ['title', 'description', 'link', 'id'],
+  inject: ['removeResource'],
 };
 </script>
 
